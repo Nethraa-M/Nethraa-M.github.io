@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<h1>
+			<b>Calculator</b>
+
+		</h1>
+		<h2>
+			<u>Calculator</u>
+			</h2>
+		
+		<title>Calculator</title>
+		</head>
+		<body>
+
+			<div id = "calculation"></div>
+			<label></label>
+			<input id = "input1">
+
+
+
+			<br><br><button id = "one" onclick = "numone()" style = "background-color: pink">1</button> 
+			<button id = "two" onclick = "numtwo ()" style = "background-color: pink">2</button>
+			<button id = "three" onclick = "numthree ()" style = "background-color: pink">3</button>
+			<button id = "four" onclick = "numfour ()" style = "background-color: pink">4</button>
+			<button id = "five" onclick = "numfive ()" style = "background-color: pink">5</button>
+			<button id = "add" onclick = "add ()"  style = "background-color: pink">+</button>
+			<button id = "subtract" onclick = "subtract ()" style = "background-color: pink">-</button>
+			<button id = "remainder" onclick = "remainder ()" style = "background-color: pink">Give Remainder</button>
+			<br><button id = "six" onclick = "numsix ()" style = "background-color: pink">6</button>
+			<button id = "seven" onclick = "numseven ()" style = "background-color: pink">7</button>
+			<button id = "eight" onclick = "numeight ()" style = "background-color: pink">8</button>
+			<button id = "nine" onclick = "numnine ()" style = "background-color: pink">9</button>
+			<button id = "zero" onclick = "numzero ()" style = "background-color: pink">0</button>
+			<button id = "multiply" onclick = "multiply ()" style = "background-color: pink">*</button>
+			<button id = "divide" onclick = "divide ()" style = "background-color: pink">/</button>
+			<br><button id = "decimal" onclick = "decimal ()" style = "background-color: pink">.</button>
+			<button id = "calculate" onclick = "calculate ()" style = "background-color: pink">calculate</button>
+			<button id = "clear" onclick = "remove ()" style = "background-color: pink">clear</button>  					
+			<button id = "delete" onclick = "backspace ()" style = "background-color: pink">remove</button> 
+
+
+	
+			<script>
+				function numone(){
+					var value = document.getElementById("input1").value;
+					document.getElementById("input1").value = value + "1";
+					document.getElementById("one").style.backgroundColor = "yellow";
+					
+
+				} 
+				function numtwo(){
+					var value = document.getElementById("input1").value;
+					document.getElementById("input1").value = value + "2"
+					document.getElementById("two").style.backgroundColor = "yellow";
+					
+
+				}
+				function numthree(){
+					var value = document.getElementById("input1").value;
+					document.getElementById("input1").value = value + "3";
+					document.getElementById("three").style.backgroundColor = "yellow";
+					
+
+				}
+				function numfour(){
+					var value = document.getElementById("input1").value;
+					document.getElementById("input1").value = value + 4;
+					document.getElementById("four").style.backgroundColor = "yellow";
+				} 
+				function numfive(){
+					var value = document.getElementById("input1").value;
+					document.getElementById("input1").value = value + 5;
+					document.getElementById("five").style.backgroundColor = "yellow";
+				}
+				function numsix(){
+					var value = document.getElementById("input1").value;
+					document.getElementById("input1").value = value + 6;
+					document.getElementById("six").style.backgroundColor = "yellow";
+				}
+				function numseven(){
+					var value = document.getElementById("input1").value;
+					document.getElementById("input1").value = value + 7;
+					document.getElementById("seven").style.backgroundColor = "yellow";
+				}
+				function numeight(){
+					var value = document.getElementById("input1").value;
+					document.getElementById("input1").value = value + 8;
+					document.getElementById("eight").style.backgroundColor = "yellow";
+				}
+				function numnine(){
+					var value = document.getElementById("input1").value;
+					document.getElementById("input1").value = value + 9;
+					document.getElementById("nine").style.backgroundColor = "yellow";
+				}
+				function numzero(){
+					var value = document.getElementById("input1").value;
+					document.getElementById("input1").value = value + 0;
+					document.getElementById("zero").style.backgroundColor = "yellow";
+				}
+	
+				function add(){
+				var value = document.getElementById("input1").value;
+				document.getElementById("input1").value = value + "+";
+
+				}
+				function subtract (){
+				var value = document.getElementById("input1").value;
+				document.getElementById("input1").value = value + "-";
+
+				}
+
+				function calculate (){
+					var x = document.getElementById("input1").value;			//example value: 2+3
+					var y = x.split("+");										//y = ['2', '3']
+
+					console.log(y[0]);
+					console.log(y[1]);
+					
+					if(x.includes("+")){
+						var y = x.split("+");
+						sum = parseFloat(y[0]) + parseFloat(y[1]);
+					document.getElementById("input1").value = sum;
+					} else if (x.includes("-")){
+						var y = x.split("-");
+						difference = parseFloat(y[0]) - parseFloat(y[1]);
+					document.getElementById("input1").value = difference;
+					} else if(x.includes ("*")){
+						var y = x.split("*");
+						product = parseFloat(y[0])*parseFloat(y[1]);
+						document.getElementById("input1").value = product;
+					} else if(x.includes ("/")){
+						var y = x.split("/");
+						quotient = parseFloat(y[0])/parseFloat(y[1]);
+						document.getElementById("input1").value = quotient;
+					} else if (x.includes("%")){
+						var y = x.split("%");
+						console.log("printing y value");
+						console.log(y);
+						divisible = parseFloat(y[0]) % parseFloat(y[1]);
+						console.log(parseFloat(y[0]));
+						console.log(parseFloat(y[1]));
+						console.log("printing divisible");
+						console.log(divisible);
+						document.getElementById("input1").value = divisible;
+					} 
+					if(x.includes("/0")){
+						alert("You have entered an invalid input");
+
+
+					}
+					document.getElementById("one").style.backgroundColor = "pink";
+					document.getElementById("two").style.backgroundColor = "pink";
+					document.getElementById("three").style.backgroundColor = "pink";
+					document.getElementById("four").style.backgroundColor = "pink";
+					document.getElementById("five").style.backgroundColor = "pink";
+					document.getElementById("six").style.backgroundColor = "pink";
+					document.getElementById("seven").style.backgroundColor = "pink";
+					document.getElementById("eight").style.backgroundColor = "pink";
+					document.getElementById("nine").style.backgroundColor = "pink";
+					document.getElementById("zero").style.backgroundColor = "pink";
+				} 
+				 function remove (){
+				 	console.log("yes");
+				 	document.getElementById("input1").value = "";
+				 }
+				 function multiply(){
+				 	var value = document.getElementById("input1").value;
+				 	document.getElementById("input1").value = value + "*";
+				 }
+				 function divide(){
+				 	var value = document.getElementById("input1").value;
+				 	document.getElementById("input1").value = value + "/";
+				 }
+				 function parenthesees1(){
+				 	var value = document.getElementById("input1").value;
+				 	document.getElementById("input1").value = "("+value;
+				 	//reminder: code the execution later
+				 }
+				 function parenthesees2(){
+				 	var value = document.getElementById("input1").value;
+				 	document.getElementById("input1").value = value + ")";
+				 	//reminder: code the execution later
+				 }
+				 function decimal(){
+				 	var value = document.getElementById("input1").value;
+				 	document.getElementById("input1").value = value + ".";
+				 	//note: change to float later
+
+				 }
+				 function backspace(){
+				 	var str = document.getElementById("input1").value;
+				 	console.log(str);
+				 	str = str.slice(0, -1);
+				 	console.log(str);
+				 	document.getElementById("input1").value = str;
+				 }
+				 function remainder(){
+				 	var value = document.getElementById("input1").value;
+				 	document.getElementById("input1").value = value + "%"
+				 }
+
+
+
+
+
+			
+					
+			
+					
+				
+				
+
+
+
+
+		</script>
+		</body>
+	
+	
+</html>
